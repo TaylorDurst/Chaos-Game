@@ -1,50 +1,36 @@
-// Include important C++ libraries here
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
 #include <sstream>
-
+//test
 // Make code easier to type with "using namespace"
 using namespace sf;
 using namespace std;
-
 int main()
 {
-    float width = sf::VideoMode::getDesktopMode().width;
-    float height = sf::VideoMode::getDesktopMode().height;
-
-    sf::View view(sf::FloatRect(0.f, 0.f, width, height));
-    // Create a video mode object
-
-    VideoMode vm(width, height);
-    // Create and open a window for the game
+	float width = sf::VideoMode::getDesktopMode().width;
+	float height = sf::VideoMode::getDesktopMode().height;
+	sf::View view(sf::FloatRect(0.f, 0.f, width, height));
+	// Create a video mode object
+	VideoMode vm(width, height);
+	//VideoMode vm(800, 600);
+	// Create and open a window for the game
 	RenderWindow window(vm, "Chaos Game!", Style::Default);
-	Text messageText;
-    // We need to choose a font
-    Font font;    font.loadFromFile("./fonts/Roboto-Black.ttf");    messageText.setFont(font);
-messageText.setCharacterSize(22);
-
-Std:stringstream ss;
-ss<<"Left click 3+ points, then right click to start.";
-messageText.setString(ss.str());int main()
-{
-	VideoMode vm(1920, 1080);
-	RenderWindow window(vm, "Chaos Game!", Style::Default);
-
-    vector<Vector2f> vertices;
+	vector<Vector2f> vertices;
     vector<Vector2f> points;
     int numberOfPoints = 0;
     int lastvertex = 0;
-    Font font;
-    font.loadFromFile("fonts/KOMIKAP_.ttf");
-    Text text;
 
-    text.setFont(font); 
-    text.setString("Left click 3-4 points, right click to start");
-    text.setCharacterSize(24); 
-    text.setFillColor(Color::White);
-    text.setStyle(Text::Bold);
+	Text messageText;
+	// We need to choose a font
+	Font font;
+	font.loadFromFile("./fonts/Roboto-Black.ttf");
+	messageText.setFont(font);
+	messageText.setCharacterSize(22);
 
+    std:stringstream ss;
+    ss<<"Left click 3+ points, then right click to start.";
+    messageText.setString(ss.str());
 
 
 	while (window.isOpen())
@@ -110,7 +96,7 @@ messageText.setString(ss.str());int main()
 
         
         window.clear();
-        window.draw(text);
+        window.draw(messageText);
         for(int i = 0; i < vertices.size(); i++)
         {
             RectangleShape rect(Vector2f(15,15));
@@ -129,5 +115,5 @@ messageText.setString(ss.str());int main()
         }
         
         window.display();
-	}
+    }
 }
