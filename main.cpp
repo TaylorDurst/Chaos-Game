@@ -1,8 +1,11 @@
+//We both contributed and worked on in person in the library but it won't push for some reason on his computer so I just pushed it through mine
+
+
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <iostream>
 #include <sstream>
-//test
+
 // Make code easier to type with "using namespace"
 using namespace sf;
 using namespace std;
